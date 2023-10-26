@@ -1,0 +1,62 @@
+from flask import Flask, render_template, request, redirect, url_for
+import os
+import subprocess
+import shutil
+filename = 'inputfile'
+app = Flask(__name__)
+
+src_dir = '/home/kube/flaskapp/input1.txt' 
+dest_dir = '/home/kube/ymlgenerator/input1.txt'
+
+@app.route('/home')
+def home():
+    return render_template('home.html')
+
+@app.route('/buttons')
+def buttons():
+    return render_template('buttons.html')
+
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+
+@app.route('/save', methods=['POST'])
+def save():
+    Hostname = request.form.get('Hostname')
+    content = request.form.get('content')
+    author = request.form.get('author')
+    date = request.form.get('date')
+    category = request.form.get('category')
+
+    if filename and content and author and date and category:
+        file_content = f"{Hostname}\n{author}\n{date}\n{category}\n{content}"
+
+        with open(f'{filename}.txt', 'w') as file:
+            file.write(file_content)
+        
+        shutil.copyfile(src_dir,dest_dir)
+        try:
+            subprocess.run(["python3", "myscript.py"], check=True)
+            return redirect(url_for('success'))
+        except subprocess.CalledProcessError as e:
+            return f"Error running script: {e}"
+        
+        else:
+            return "Please provide content."
+
+       # return redirect(url_for('success'))
+    #else:
+     #   return "Please provide all required information."
+
+@app.route('/success')
+def success():
+    return "Data saved and script executed successfully!"
+
+    #return redirect(url_for('index'))
+
+if __name__ == '__main__':
+     port = int(os.environ.get('PORT', 5000))
+     app.run(debug=True, host='0.0.0.0', port=port)
+

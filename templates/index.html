@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ansible YML Generator</title>
+    <style>
+        body {
+            background-image: url('/static/bg.jpg'); /* Replace with your background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: #f5f5f5; /* Fallback background color */
+            font-family: CooperBlack, sans-serif;
+            margin: 0;
+            padding: 0;
+          }  
+     
+        h1 {
+            text-align: center;
+            padding: 20px;
+	    color: #ffffff;
+        }
+
+	select {
+        width: 100%; /* Make the select element full-width */
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: rgba(0,0,0,0.2);
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center; /* Center elements horizontally */
+        }
+
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+	    color: #ffffff;
+        }
+
+     
+        input[type="text"],
+        textarea,
+        input[type="submit"],
+        input[type="button"] {
+            width: 100%; /* Make all inputs and buttons full-width */
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+
+
+        input[type="submit"],
+        input[type="button"] {
+            background-color: #FBB117;
+            color: #000000;
+            cursor: pointer;
+            flex: 1; /* Equal width for both buttons */
+	    font-weight: bold;
+        }
+
+        input[type="submit"]:hover,
+        input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+
+        .button-container {
+            display: flex; /* Display buttons in the same line */
+            justify-content: space-between; /* Space them evenly */
+            width: 100%; /* Make the container full-width */
+        }
+    </style>
+</head>
+<body>
+    <h1>Ansible YML Generator</h1>
+    <div class="container">
+        <form method="POST" action="/save" onsubmit="showSuccessMessageAndRedirect()">
+          
+            <label for="Hostname">Hostname:</label>
+            <input type="text" name="Hostname" required>
+			
+	    <label for="content">BMC_IP:</label>
+            <input type="text" name="content" required>
+             
+	    <label for="Host_IP">SSH Host IP:</label>
+            <input type="text" name="Host_IP" required>
+
+            <label for="B_vlan">Bonding Vlan:</label>
+            <input type="text" name="B_vlan" required>
+            
+
+	    <label for="dropdown5">OS_Profile:</label>
+            <select name="dropdown5" id="dropdown5" required>
+            <option value="5g_vdu">5g_vdu</option>
+            <option value="5g_vcu">5g_vcu</option>
+            </select>
+
+             
+	    <label for="dropdown4">Server Kind:</label>
+            <select name="dropdown4" id="dropdown4" required>
+            <option value="SKU1">SKU1</option>
+            <option value="SKU2">SKU2</option>
+            <option value="GC SKU5">GC SKU5</option>
+	    <option value="RGS">RGS</option>
+	    <option value="CDC SKU2">CDC SKU2</option>
+	    <option value="Rakuten-DI323C">Rakuten-DI323C</option>
+	     <option value="CDC SKU10">CDC SKU10</option>
+
+            </select>
+
+			
+
+	    <label for="dropdown1">Robin_Version:</label>
+            <select name="dropdown1" id="dropdown1" required>
+            <option value="5.3.13-126">5.3.13-126</option>
+            <option value="5.4.3-281">5.4.3-281</option>
+            <option value="5.4.3-302">5.4.3-302</option>
+            </select>
+
+
+
+	    <label for="dropdown2">RCP Verison:</label>
+            <select name="dropdown2" id="dropdown2" required>
+            <option value="0.6.1">0.6.1</option>
+            <option value="0.6.2">0.6.2</option>
+            <option value="0.6.3">0.6.3</option>
+            </select>
+			
+         
+	    <label for="dropdown3">Server Type:</label>
+            <select name="dropdown3" id="dropdown3" required>
+            <option value="RDC">RDC</option>
+            <option value="CDC">CDC</option>
+            <option value="GC">GC</option>
+            </select>      
+
+           <input type="submit" value="Genarate YML File">
+        </form>
+
+        <div class="button-container">
+            <a href="http://10.21.3.125:5000/home">
+                <input type="button" value="HOME">
+            </a>
+        </div>
+
+        <div id="successMessage" style="display: none;">
+            Form submitted successfully. Redirecting to the index...
+        </div>
+    </div>
+
+    <script>
+        function showSuccessMessageAndRedirect() {
+            // Show the success message after form submission
+            document.getElementById("successMessage").style.display = "block";
+
+            // Redirect to the index page after a delay (e.g., 2 seconds)
+            setTimeout(function () {
+
+
+
+
+                window.location.href = 'http://10.21.3.125:5000';
+            }, 2000); // 2000 milliseconds = 2 seconds
+        }
+    </script>
+</body>
+</html>
+

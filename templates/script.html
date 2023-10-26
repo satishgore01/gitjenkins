@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Error Message</title>
+    <style>
+          /* CSS for the link button */
+        body {
+            background-image: url(''); /* Replace with your background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: #f5f5f5; /* Fallback background color */
+            font-family: CooperBlack, sans-serif;
+            margin: 0;
+            padding: 0;
+          }
+
+
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* CSS for the error message */
+        .error-message {
+            color: red;
+            text-decoration: underline;
+        }
+
+        /* CSS for the red heading */
+        .red-heading {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- Black heading -->
+
+    <!-- Display the output and errors -->
+    <div>
+        <!-- Black heading -->
+        <h3>Script Output:</h3>
+        <pre>{{ script_output }}</pre>
+    </div>
+    <div>
+        <!-- Red heading using inline CSS -->
+        <h3 style="color: red;">Script Errors:</h3>
+        <pre class="error-message">{{ script_errors }}</pre>
+    </div>
+
+    <a href="http://10.21.3.125:5000/" class="button">Recreate</a>
+     <a href="http://10.21.3.125/ymlfiles/" class="button">YMLFILES</a>
+</body>
+</html>
