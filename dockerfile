@@ -3,7 +3,7 @@ FROM ubuntu:latest
 
 RUN apt-get update -y
 RUN apt-get install -y python3 python3-pip
-RUN apt-get install -y vim
+
 RUN pip3 install pyyaml
 
 # copy the requirements file into the image
