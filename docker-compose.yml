@@ -1,0 +1,8 @@
+version: '3'  # The version of the Compose file format
+
+services:
+  # Web service definition
+  web:
+    image: satish8380/myflaskapp # Use the official Nginx image from Docker Hub
+    ports:
+      - "5000:5000"  # Map host port 8080 to container port 80
