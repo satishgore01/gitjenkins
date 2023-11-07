@@ -50,32 +50,8 @@ Install Docker and Docker Compose on your Ubuntu server following the official d
 
 **docker-file**
 # start by pulling the python image
-
-FROM ubuntu:latest
-RUN apt-get update -y
-RUN apt-get install -y python3 python3-pip
-RUN apt-get install -y vim
-RUN pip3 install pyyaml
-
-# copy the requirements file into the image
-
-COPY ./requirements.txt /app/requirements.txt
-#RUN mkdir /home/ymlgenerator
-RUN mkdir /home/ymlfiles
-COPY ./ymlgenerator  /app/ymlgenerator
-RUN touch /app/ymlgenerator/inputfile.txt
-RUN touch /app/inputfile.txt
-# switch working directory
-WORKDIR /app
-# install the dependencies and packages in the requirements file
-RUN pip install -r requirements.txt
-# copy every content from the local file to the image
-COPY . /app
-# configure the container to run in an executed manner
-ENTRYPOINT [ "python3" ]
-CMD ["newbuild.py" ]![image](https://github.com/satishgore01/gitjenkins/assets/148797721/a4c64102-523e-4abd-9cb9-00b3e57bb925)
-
 **CICD-PIPELINE**
+
 
 
 pipeline {
@@ -95,19 +71,15 @@ pipeline {
             steps {
                 sh  "docker tag myflaskapp satish8380/myflaskapp:latest"
                 sh "docker login -u satish8380 -p Satdip@#83"
-                sh "docker push satish8380/myflaskapp:latest"
-               
+                sh "docker push satish8380/myflaskapp:latest"  
                 }
-
-            }
-                
+            }       
          stage('deploy application on host') {
             steps {
                sh "docker-compose down -d"
                sh "docker-compose up -d"
-
             }
-        }    
+		}    
 }
 }
 
