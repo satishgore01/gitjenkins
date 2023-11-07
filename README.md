@@ -11,8 +11,14 @@ Prerequisites Before setting up the CI/CD pipeline for this project, ensure you 
 -Docker and Docker Compose installed on your Ubuntu server.
 
 
-app/: 
-Contains your Flask application code. jenkins/: Contains Jenkins pipeline configuration files. Dockerfile: Defines how to build the Docker image for your Flask app. docker-compose.yml: Configuration for running your app in Docker containers.
+-app/: 
+Contains your Flask application code.
+
+-jenkins/: Contains Jenkins pipeline configuration files.
+
+-Dockerfile: Defines how to build the Docker image for your Flask app.
+
+-docker-compose.yml: Configuration for running your app in Docker containers.
 
 **STEP1:**
 
