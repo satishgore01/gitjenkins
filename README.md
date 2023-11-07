@@ -13,7 +13,7 @@ Contains your Flask application code. jenkins/: Contains Jenkins pipeline config
 
 Setting up AWS Create an AWS EC2 instance with Ubuntu 20.04. SSH into your AWS instance. Configure your AWS CLI with your credentials.
 
-STEP2:
+**STEP2:**
 
 Setting up Git Install Git on your local machine. Clone this repository.
 
@@ -21,17 +21,25 @@ git clone https://github.com/satishgore01/gitjenkins.git
 
 Configure Git with your name and email. git config --global user.name "Your Name" git config --global user.email "youremail@example.com"
 
-STEP3: Setting up Jenkins Install Jenkins on your server following the official documentation. Install necessary Jenkins plugins (e.g., Git, Docker, AWS). Create a Jenkins pipeline job using the configuration in the jenkins/ folder
+**STEP3: **
 
-STEP4: Setting up Docker Install Docker and Docker Compose on your Ubuntu server following the official documentation.
+Setting up Jenkins Install Jenkins on your server following the official documentation. Install necessary Jenkins plugins (e.g., Git, Docker, AWS). Create a Jenkins pipeline job using the configuration in the jenkins/ folder
 
-STEP5: create dockerfile and docker compose-file check execting docker file which is alreday added in git repo.
+**STEP4:**
 
-Step6 Jenkins configuration
+Setting up Docker Install Docker and Docker Compose on your Ubuntu server following the official documentation.
 
-CICD-PIPELINE 
-pipeline
-   use jenkins pipeline.txt for jenkins configuaration 
+**STEP5: **
+
+create **dockerfile** and **docker-compose** check execting docker file which is alreday added in git repo.
+**
+Step6**
+
+Jenkins configuration
+
+**CICD-PIPELINE** 
+
+   use jenkins ** pipeline.txt** for jenkins configuaration 
 
 STEP7: common errors: check docker is running or not. jenkins user added or not in docker group git resgistry and credentials
 
