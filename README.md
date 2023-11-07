@@ -10,6 +10,7 @@ Prerequisites Before setting up the CI/CD pipeline for this project, ensure you 
 
 -Docker and Docker Compose installed on your Ubuntu server.
 
+**APPLICATION STRUCTURE**
 
 -app/: 
 Contains your Flask application code.
