@@ -3,6 +3,7 @@ CI/CD Flask App Project with AWS, Git, Jenkins, and Docker This project demonstr
 Prerequisites Before setting up the CI/CD pipeline for this project, ensure you have the following prerequisites in place: 
 
 -Ubuntu 20.04 server with SSH access.
+
 -AWS account and necessary IAM permissions. 
 
 -Git installed on your local machine and Jenkins server. 
