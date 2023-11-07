@@ -27,11 +27,11 @@ Setting up AWS Create an AWS EC2 instance with Ubuntu 20.04. SSH into your AWS i
 
 **STEP2:**
 
-Setting up Git Install Git on your local machine. Clone this repository.
+**Setting up Git Install Git on your local machine. Clone this repository.**
 
 -git clone https://github.com/satishgore01/gitjenkins.git
 
-Configure Git with your name and email.
+**Configure Git with your name and email.**
 
 -git config --global user.name "Your Name" git config --global user.email "youremail@example.com"
 
