@@ -29,9 +29,11 @@ Setting up AWS Create an AWS EC2 instance with Ubuntu 20.04. SSH into your AWS i
 
 Setting up Git Install Git on your local machine. Clone this repository.
 
-git clone https://github.com/satishgore01/gitjenkins.git
+-git clone https://github.com/satishgore01/gitjenkins.git
 
-Configure Git with your name and email. git config --global user.name "Your Name" git config --global user.email "youremail@example.com"
+Configure Git with your name and email.
+
+-git config --global user.name "Your Name" git config --global user.email "youremail@example.com"
 
 **STEP3: **
 
@@ -53,7 +55,11 @@ Jenkins configuration
 
    use jenkins ** pipeline.txt** for jenkins configuaration 
 
-STEP7: common errors: check docker is running or not. jenkins user added or not in docker group git resgistry and credentials
+**STEP7: common errors:** 
+
+-check docker is running or not. 
+
+-jenkins user added or not in docker group git resgistry and credentials
 
 CI/CD Workflow Any changes pushed to the Git repository trigger Jenkins to build and deploy the Flask app. Jenkins runs the pipeline defined in the jenkins/ directory. The app is built and deployed in a Docker container on the AWS EC2 instance.
 
