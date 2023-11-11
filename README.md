@@ -46,7 +46,14 @@ Setting up AWS Create an AWS EC2 instance with Ubuntu 20.04. SSH into your AWS i
 
 **Configure Git with your name and email.**
 
--git config --global user.name "Your Name" git config --global user.email "youremail@example.com"
+git config --global user.name "Your Name" 
+
+ git config --global user.email "youremail@example.com"
+
+eg.
+git config --global user.name "satish"
+
+git config --global user.email "xyz@gmail.com"
 
 
 
