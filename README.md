@@ -25,11 +25,24 @@ Contains your Flask application code.
 
 Setting up AWS Create an AWS EC2 instance with Ubuntu 20.04. SSH into your AWS instance. Configure your AWS CLI with your credentials.
 
+-----------------------------------------------------------------------------------------------------------------------
+
 **STEP2:**
 
 **Setting up Git Install Git on your local machine. Clone this repository.**
 
--git clone https://github.com/satishgore01/gitjenkins.git
+#git clone https://github.com/satishgore01/gitjenkins.git
+
+#git init
+
+#git add .
+
+#git commint -m "project files added"
+
+-------------------------------------------------------------------------------------------------------------------------
+
+**step 3**
+  **push code to your github repo**
 
 **Configure Git with your name and email.**
 
