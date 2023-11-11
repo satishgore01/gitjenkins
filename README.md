@@ -48,6 +48,11 @@ Setting up AWS Create an AWS EC2 instance with Ubuntu 20.04. SSH into your AWS i
 
 -git config --global user.name "Your Name" git config --global user.email "youremail@example.com"
 
+
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
 **STEP3: **
 
 Setting up Jenkins Install Jenkins on your server following the official documentation. Install necessary Jenkins plugins (e.g., Git, Docker, AWS). Create a Jenkins pipeline job using the configuration in the jenkins/ folder
