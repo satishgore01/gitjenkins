@@ -1,1 +1,37 @@
+pipeline {
+    agent any
+    stages {
+        stage('clone code from github') {
+            steps {
+               git url: "https://github.com/satishgore01/gitjenkins.git", branch: "satish"
 
+            }
+        }
+        stage('docker image build') {
+            steps {
+               sh "docker build -t myflaskapp ."
+
+            }
+        
+        }
+        stage('push image to dockerhub') {
+            steps {
+                sh  "docker tag myflaskapp satish8380/myflaskapp:latest"
+                sh "docker login -u satish8380 -p Satdip@#83"
+                sh "docker push satish8380/myflaskapp:latest"
+               
+                }
+
+            }
+                
+         stage('deploy application on host') {
+            steps {
+               sh "docker-compose down -d"
+               sh "docker-compose up -d"
+
+            }
+        }
+        
+        
+}
+}
