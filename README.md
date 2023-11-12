@@ -72,7 +72,7 @@ git remote set-url origin https://username:token@github.com/username/repository.
 eg. git remote set-url origin https://satishgore01:ghp_K3mxrvAe4556u4PMVNel1zO2vIAG51yF0y13l0@github.com/satishgore01/php-webapp.git
 
 git push git push -u origin main
----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 **STEP4**
  
@@ -109,7 +109,44 @@ permission denied while trying to connect to the Docker daemon socket at unix://
  Setting up Jenkins Install Jenkins on your server
  following the official documentation. Install necessary Jenkins plugins (e.g., Git, Docker, AWS). Create a Jenkins pipeline job using the configuration in the jenkins/ folder
 
+ **step 1 : install jenkins**
 
+  sudo wget -O /usr/share/keyrings/jenkins-keyri                                                                             ng.asc \
+  https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+sudo apt-get update
+sudo apt-get install jenkins
+
+**step 2 install opjdk 17**
+
+ wget https://download.oracle.com/java/17/latest/jdk-17_linux-aarch64_bin.tar.gz
+
+  tar xvf jdk-17_linux-aarch64_bin.tar.gz
+
+  cd jdk-17.0.9/
+
+  sudo apt-get install openjdk-17-jre
+
+**restart jenkins**
+
+    systemctl restart jenkins
+
+    systemctl status jenkins
+
+ **open your ip on webbrowser with port 8080**
+
+ ip:8080
+ eg.
+ 
+  http://16.171.47.42:8080/
+
+ and enter your password key
+
+ /var/lib/jenkins/secrets/initialAdminPassword
+
+**done**
 ----------------------------------------------------------------------------------------------------------------------------
 **STEP7:**
 
