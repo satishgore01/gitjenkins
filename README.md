@@ -77,6 +77,7 @@ git push git push -u origin main
 **STEP4**
  
  ------------------------------------------------- **install docker** ------------------------------------------------------
+
 sudo apt-get update sudo apt-get install ca-certificates curl gnupg sudo install -m 0755 -d /etc/apt/keyrings curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg sudo chmod a+r /etc/apt/keyrings/docker.gpg
 
 # Add the repository to Apt sources: 
