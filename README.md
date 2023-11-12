@@ -112,7 +112,7 @@ permission denied while trying to connect to the Docker daemon socket at unix://
 
  **step 1 : install jenkins**
 
-  sudo wget -O /usr/share/keyrings/jenkins-keyri                                                                             ng.asc \
+  sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
   https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
 echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
   https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
@@ -122,7 +122,7 @@ sudo apt-get install jenkins
 
 **step 2 install opjdk 17**
 
- wget https://download.oracle.com/java/17/latest/jdk-17_linux-aarch64_bin.tar.gz
+  wget https://download.oracle.com/java/17/latest/jdk-17_linux-aarch64_bin.tar.gz
 
   tar xvf jdk-17_linux-aarch64_bin.tar.gz
 
