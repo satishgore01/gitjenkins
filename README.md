@@ -74,46 +74,50 @@ eg. git remote set-url origin https://satishgore01:ghp_K3mxrvAe4556u4PMVNel1zO2v
 git push git push -u origin main
 ---------------------------------------------------------------------------------------------------------------------------
 
-**STEP2**
-   **docker installation** 
-       
-       for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
+**STEP4**
+ 
+ ------------------------------------------------- **install docker** ------------------------------------------------------
+sudo apt-get update sudo apt-get install ca-certificates curl gnupg sudo install -m 0755 -d /etc/apt/keyrings curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg sudo chmod a+r /etc/apt/keyrings/docker.gpg
+
+# Add the repository to Apt sources: 
+
+echo \ "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \ "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \ sudo tee /etc/apt/sources.list.d/docker.list > /dev/null sudo apt-get update
+
+ #apt  install docker.io
+
+ #systemctl status docker
+
+**add ubuntu user to docker group**
+
+if you get following error for non root user follow below procedure
+
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/json": dial unix /var/run/docker.sock: connect: permission denied
+
+** add ubuntu user to docker group**
+ #sudo usermod -aG docker ubuntu
+ #systemctl restart docker 
+ #docker ps 
+
+** check docker command working or not for ubuntu user**
+
+----------------------------------------------------------------------------------------------------------------------------
+
+      
+
+**STEP6:**
+ 
+ Setting up Jenkins Install Jenkins on your server
+ following the official documentation. Install necessary Jenkins plugins (e.g., Git, Docker, AWS). Create a Jenkins pipeline job using the configuration in the jenkins/ folder
 
 
-# Add Docker's official GPG key:
-
-sudo apt-get update
-sudo apt-get install ca-certificates curl gnupg
-sudo install -m 0755 -d /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-sudo chmod a+r /etc/apt/keyrings/docker.gpg
-
-# Add the repository to Apt sources:
-
-echo \
-  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
-  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-  sudo apt-get update
-
-  
-
-
-
-
-
-Setting up Jenkins Install Jenkins on your server following the official documentation. Install necessary Jenkins plugins (e.g., Git, Docker, AWS). Create a Jenkins pipeline job using the configuration in the jenkins/ folder
-
-**STEP4:**
-
-Setting up Docker Install Docker and Docker Compose on your Ubuntu server following the official documentation.
-
-**STEP5: **
+----------------------------------------------------------------------------------------------------------------------------
+**STEP7:**
 
 create **dockerfile** and **docker-compose** check execting docker file which is alreday added in git repo.
-**
-Step6**
 
+----------------------------------------------------------------------------------------------------------------------------
+
+**Step6**
 Jenkins configuration
 
 **CICD-PIPELINE** 
