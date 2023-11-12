@@ -95,9 +95,12 @@ if you get following error for non root user follow below procedure
 permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/json": dial unix /var/run/docker.sock: connect: permission denied
 
 ** add ubuntu user to docker group**
- #sudo usermod -aG docker ubuntu
- #systemctl restart docker 
- #docker ps 
+
+ sudo usermod -aG docker ubuntu
+ 
+ systemctl restart docker 
+ 
+ docker ps 
 
 ** check docker command working or not for ubuntu user**
 
